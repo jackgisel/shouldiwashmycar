@@ -19,6 +19,7 @@ async function getForecast() {
       const forecastList = data.list;
       const twoWeeksForecast = forecastList.slice(0, 5);
       const isRainExpected = twoWeeksForecast.some((forecast) => {
+        console.log(forecast.weather);
         return forecast.weather.some((weather) =>
           ["Rain", "Snow"].includes(weather.main)
         );
