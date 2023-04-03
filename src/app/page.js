@@ -17,7 +17,7 @@ async function getForecast() {
     .then((data) => {
       // Parse weather forecast data and check if it's going to rain in the next 2 weeks
       const forecastList = data.list;
-      const twoWeeksForecast = forecastList.slice(0, 14);
+      const twoWeeksForecast = forecastList.slice(0, 5);
       const isRainExpected = twoWeeksForecast.some((forecast) => {
         return forecast.weather.some((weather) =>
           ["Rain", "Snow"].includes(weather.main)
